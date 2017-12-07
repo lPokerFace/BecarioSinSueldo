@@ -8,13 +8,13 @@ client.on('ready', () => {
 
 client.on('message', message => {
      if (message.content === prefix + 'help') {
-    	 message.send('help - Muestra los códigos del bot.');
+    	 message.sendMessage('help - Muestra los códigos del bot.');
   	}
      if (message.content === prefix + 'Trotsky') {
-    	 message.send(':piolet:');
+    	 message.sendMessage(':piolet:');
   	}
  if (message.content === prefix + 'Pablo') {
-    	 message.send('http://i61.tinypic.com/33mtlj6.png');
+    	 message.sendMessage('http://i61.tinypic.com/33mtlj6.png');
   	}    
 });
 
