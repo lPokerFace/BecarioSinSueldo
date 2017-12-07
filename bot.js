@@ -9,6 +9,7 @@ client.on('ready', () => {
 client.on('message', msg => {
   if (msg.content === prefix + 'Trotsky') {
     msg.channel.sendMessage('Pioletazo');
+    msg.channel.sendMessage('Y Fidel es un gaylo');  
   }
   if (msg.content === prefix + 'help') {
     msg.channel.sendMessage('help - Lista de los códigos disponibles');
