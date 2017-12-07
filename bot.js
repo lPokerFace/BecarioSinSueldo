@@ -7,9 +7,15 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === prefix + 'ping') {
-    	message.reply('pong');
+     if (message.content === prefix + 'help') {
+    	 message.reply('help - Muestra los códigos del bot.');
   	}
+     if (message.content === prefix + 'Trotsky') {
+    	 message.reply(':piolet:');
+  	}
+ if (message.content === prefix + 'Pablo') {
+    	 message.reply('http://i61.tinypic.com/33mtlj6.png');
+  	}    
 });
 
 // THIS  MUST  BE  THIS  WAY
