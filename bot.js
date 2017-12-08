@@ -18,12 +18,9 @@ client.on('message', msg => {
   }
 });
 
-client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('bienvenida', 'member-log');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Bienvenido ${member}, di tu nombre de usuario en RR y el partido al que perteneces (PCE, PCO o PCA)`);
+client.on("guildMemberAdd", (member) => {
+  console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
+  member.guild.channels.get("welcome").send(`"${member.user.username}" has joined this server`);
 });
 
 // THIS  MUST  BE  THIS  WAY
