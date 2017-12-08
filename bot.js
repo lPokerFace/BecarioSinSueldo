@@ -18,9 +18,9 @@ client.on('message', msg => {
   }
 });
 
-client.on("guildMemberAdd", (member) => {
-  console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
-  member.guild.channels.get("bienvenida").send(`"${member.user.username}" has joined this server`);
+client.on("guildMemberAdd", member => {
+  lrt guild - member.guild;
+  guild.defaultChannel.sendMessage(`Bienvenido ${member.user}, di tu nickname en RR y el partido al que perteneces.`);
 });
 
 // THIS  MUST  BE  THIS  WAY
