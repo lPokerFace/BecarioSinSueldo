@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === prefix + 'Trotsky') {
-    msg.channel.sendMessage('Pioletazo'); 
+    msg.channel.sendMessage('<:piolet:359043347391971339>'); 
   }
   if (msg.content === prefix + 'help') {
     msg.channel.sendMessage('help - Lista de los códigos disponibles');
