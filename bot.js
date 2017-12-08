@@ -18,5 +18,13 @@ client.on('message', msg => {
   }
 });
 
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find('bienvenida', 'member-log');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Bienvenido ${member}, di tu nombre de usuario en RR y el partido al que perteneces (PCE, PCO o PCA)`);
+});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
