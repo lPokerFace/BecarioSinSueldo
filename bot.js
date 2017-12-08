@@ -14,7 +14,7 @@ client.on('message', msg => {
     msg.channel.sendMessage('help - Lista de los códigos disponibles');
   }
   if (msg.content === prefix + 'Pablo') {
-    msg.channel.sendMessage('http://www.magazinefa.com/assets/uploads/2016/04/pablo-3-980x675.png');
+    msg.channel.send('http://www.magazinefa.com/assets/uploads/2016/04/pablo-3-980x675.png');
   }
 });
 
