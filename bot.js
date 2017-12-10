@@ -14,9 +14,7 @@ client.on('message', message => {
    }
 
    if (message.content.startsWith(prefix + 'help')) {
-     message.channel.send('help - Muestra una lista de todos los códigos.');
-     message.channel.send('habilidades - Muestra un resumen de la habilidades.');
-     message.channel.send('prueba - Envía un mensaje privado de prueba.')
+     message.channel.send(`help - Muestra una lista de todos los códigos. \nhabilidades - Muestra un resumen de la habilidades.\nprueba - Envía un mensaje privado de prueba. `);
    }
 
    if (message.content.startsWith(prefix + 'prueba')) {
