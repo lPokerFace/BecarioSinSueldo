@@ -61,13 +61,13 @@ client.on('message', message => {
       },
       title: "Habilidades",
       url: "http://google.com",
-      description: "Existen 3 habilidades en el juego: Fuerza, Inteligencia y Resistencia, estas habilidades se mejoran gastando dinero ($) u oro, esta última opción es mucho más rápida que la primera, también existe la opción de comprar un boost temporal de 100 puntos de una habilidad, es muy caro pero a al vez muy útil sobre todo en tiempos de guerra.",
+      description: "Existen 3 habilidades en el juego: Fuerza, Educación y Resistencia, estas habilidades se mejoran gastando dinero ($) u oro, esta última opción es mucho más rápida que la primera, también existe la opción de comprar un boost temporal de 100 puntos de una habilidad, es muy caro pero a al vez muy útil sobre todo en tiempos de guerra.",
       fields: [{
           name: "`Fuerza`",
           value: "Esta habilidad aumenta tu daño en guerras, tu efectividad trabajando en fábricas y reduce el coste de producir objetos y armamento."
         },
         {
-          name: "`Inteligencia`",
+          name: "`Educación`",
           value: "Aumenta el máximo de experiencia laboral que puedes acumular, aumenta un poco tu daño en guerra y reduce los costes de producción. El nivel 100 de Inteligencia te permite trabajar en los *Departamentos*."
         },
         {
