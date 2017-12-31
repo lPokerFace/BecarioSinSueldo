@@ -94,7 +94,7 @@ client.on('message', message => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'bienvenida');
   if (!channel) return;
-  channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces (PCO, PCA o PCE)`);
+  channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces.`);
 });
 
 client.login(process.env.BOT_TOKEN);
