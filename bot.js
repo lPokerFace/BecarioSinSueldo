@@ -9,8 +9,13 @@ var prefix = '+'
 client.on('message', message => {
   let args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
+   
    if (message.content.startsWith(prefix + 'ping')) {
       message.channel.send('pong');
+   }
+   
+   if (message.content.startsWith(prefix + 'pong')) {
+      message.channel.send('subnormal');
    }
 
    if (message.content.startsWith(prefix + 'help')) {
