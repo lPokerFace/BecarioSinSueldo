@@ -96,7 +96,7 @@ client.on('message', message => {
 
 });
 
-   if (message.content.startsWith(prefix + 'habilidades')) {
+   if (message.content.startsWith(prefix + 'oro')) {
 
      message.channel.send({embed: {
       color: 3447003,
