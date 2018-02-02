@@ -88,14 +88,9 @@ client.on('message', message => {
     }
 
   });
-   }
 
    if (message.content.startsWith(prefix + 'setgame')) {
     client.user.setGame(argresult);
-   }
-
-});
-
    }
 
    if (message.content.startsWith(prefix + 'setgame')) {
