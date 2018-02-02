@@ -96,6 +96,46 @@ client.on('message', message => {
 
 });
 
+   if (message.content.startsWith(prefix + 'habilidades')) {
+
+     message.channel.send({embed: {
+      color: 3447003,
+      author: {
+        name: client.user.username,
+        icon_url: client.user.avatarURL
+      },
+      title: "Oro",
+      url: "http://google.com",
+      description: "El oro es uno de los recursos másimportantes de juego y principal motor en los movimientos militares y económicos del juego.",
+      fields: [{
+          name: "`Usos`",
+          value: "Los usos del oro son diversos, el principal uso de este recurso es la creación de bebidas energéticas que te permitan recuperar la energía perdida. El oro también se puede transformar en dinero, cosa que debe evitarse a menos que sea indispensable. Otro uso para el oro es la creación, transporte y mejora de fábricas"
+        },
+        {
+          name: "`Educación`",
+          value: "Aumenta el máximo de experiencia laboral que puedes acumular, aumenta un poco tu daño en guerra y reduce los costes de producción. El nivel 100 de Inteligencia te permite trabajar en los *Departamentos*."
+        },
+        {
+          name: "`Aguante`",
+          value: "Reduce la energía necesaria para trabajar y participar en guerras, aumenta levemente tu daño en guerra y amplía la capacidad del almacén un 1% por cada punto de habilidad."
+        }
+      ],
+      timestamp: new Date(),
+      footer: {
+        icon_url: client.user.avatarURL,
+        text: "© PCE"
+      }
+    }
+
+  });
+   }
+
+   if (message.content.startsWith(prefix + 'setgame')) {
+    client.user.setGame(argresult);
+   }
+
+});
+
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'bienvenida');
   if (!channel) return;
