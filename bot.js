@@ -95,7 +95,7 @@ client.on('message', message => {
    }
 
    if (message.content.startsWith(prefix + 'prueba2')) {
-    import {prueba2} from 'prueba.js';
+    import {prueba2} from 'prueba2.js';
    }
 
 });
