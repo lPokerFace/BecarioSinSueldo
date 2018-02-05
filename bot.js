@@ -94,8 +94,8 @@ client.on('message', message => {
     client.user.setGame(argresult);
    }
 
-   if (message.content.startsWith(prefix + 'setgame')) {
-    client.user.setGame(argresult);
+   if (message.content.startsWith(prefix + 'prueba2')) {
+    import {prueba2} from 'prueba.js';
    }
 
 });
