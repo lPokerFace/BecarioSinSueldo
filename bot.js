@@ -99,7 +99,7 @@ client.on('message', message => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'bienvenida');
   if (!channel) return;
-  channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces.`);
+  channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces, por ahora puedes ver unos canales limitados, espera a que un administrador te actualice los roles para acceder al resto de los canales.`);
 });
 
 client.login(process.env.BOT_TOKEN);
