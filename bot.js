@@ -9,16 +9,17 @@ var prefix = '+'
 client.on('message', message => {
   let args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-   
-   if (message.content.startsWith(prefix + 'ping')) {
+
+  if (message.content.startsWith(prefix + 'ping')) {
       message.channel.send('pong');
    }
-   
-   if (message.content.startsWith(prefix + 'pong')) {
+
+  if (message.content.startsWith(prefix + 'pong')) {
       message.channel.send('subnormal');
    }
 
-   if (message.content.startsWith(prefix + 'help')) {
+  if (message.content.startsWith(prefix + 'help')) {
+
      message.channel.send({embed: {
       color: 3447003,
       author: {
@@ -33,6 +34,10 @@ client.on('message', message => {
           value: "Muestra una lista con los comandos y sus funciones."
         },
         {
+          name: "`oro`",
+          value: "Información detallada de los usos y métodos de obtención del oro."
+        },
+        {
           name: "`habilidades`",
           value: "Muestra una breve explicación de las habilidades (o stats) en RivalRegions"
         },
@@ -45,18 +50,9 @@ client.on('message', message => {
       footer: {
         icon_url: client.user.avatarURL,
         text: "© PCE"
-      }
-    }
+      }}});}
 
-  });
- }
-
-   if (message.content.startsWith(prefix + 'prueba')) {
-    message.channel.send('Mira tus mensajes privados.');
-    message.author.send('Esto es una prueba de Mensaje Privado.');
-   }
-
-   if (message.content.startsWith(prefix + 'habilidades')) {
+  if (message.content.startsWith(prefix + 'habilidades')) {
 
      message.channel.send({embed: {
       color: 3447003,
@@ -84,22 +80,53 @@ client.on('message', message => {
       footer: {
         icon_url: client.user.avatarURL,
         text: "© PCE"
+      }}});}
+
+  if (message.content.startsWith(prefix + 'oro')) {
+
+    message.channel.send({embed: {
+     color: 3447003,
+     author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Oro",
+    url: "http://google.com",
+    description: "El oro es el principal recurso de este juego.",
+    fields: [{
+        name: "`Usos`",
+        value: "Hay 2 usos principales del oro, creación de bebidas energéticas y mejora del nivel de fábrica. Además de estos usos también te piden oro en acciones como el cambio de nombre, de imagen, de nación o de región de fábrica."
+      },
+      {
+        name: "`Métodos de obtención`",
+        value: "EL principal método de obtención es trabajndo en minas de oro donde por 1 punto energético recibes 1 unidad de oro, también se consigue oro completando misiones, con medallas de partido o comprándolo en la tienda del juego.."
       }
-    }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© PCE"
+    }}});}
 
-  });
-   }     
+  if (message.content.startsWith(prefix + 'asd')) {
+    const prueba = require('./prueba');
+    let val = prueba.hello();}
 
-   if (message.content.startsWith(prefix + 'setgame')) {
+  if (message.content.startsWith(prefix + 'setgame')) {
     client.user.setGame(argresult);
    }
-   
+
+  if (message.content.startsWith(prefix + 'prueba')) {
+    message.channel.send('Mira tus mensajes privados.');
+    message.author.send('Esto es una prueba de Mensaje Privado.');
+  }
+
 });
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'bienvenida');
   if (!channel) return;
-  channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces, por ahora puedes ver unos canales limitados, espera a que un administrador te actualice los roles para acceder al resto de los canales.`);
+  channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces.`);
 });
 
 client.login(process.env.BOT_TOKEN);
