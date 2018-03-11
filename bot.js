@@ -99,7 +99,7 @@ client.on('message', message => {
       },
       {
         name: "`Métodos de obtención`",
-        value: "EL principal método de obtención es trabajndo en minas de oro donde por 1 punto energético recibes 1 unidad de oro, también se consigue oro completando misiones, con medallas de partido o comprándolo en la tienda del juego.."
+        value: "El principal método de obtención es trabajndo en minas de oro donde por 10 puntos energéticos recibes 1 unidad de oro, también se consigue oro completando misiones, con medallas de partido o comprándolo en la tienda del juego.."
       }
     ],
     timestamp: new Date(),
