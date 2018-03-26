@@ -39,7 +39,11 @@ client.on('message', message => {
         },
         {
           name: "`habilidades`",
-          value: "Muestra una breve explicación de las habilidades (o stats) en RivalRegions"
+          value: "Muestra una breve explicación de las habilidades (o stats) en Rival Regions"
+        },
+        {
+          name: "`trabajo`",
+          value: "Muestra información sobre el trabajo en Rival Regions."
         },
         {
           name: "`prueba`",
@@ -48,8 +52,8 @@ client.on('message', message => {
       ],
       timestamp: new Date(),
       footer: {
-        icon_url: client.user.avatarURL,
-        text: "© PCE"
+        icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
+        text: "© lPokerFace"
       }}});}
 
   if (message.content.startsWith(prefix + 'habilidades')) {
@@ -78,8 +82,8 @@ client.on('message', message => {
       ],
       timestamp: new Date(),
       footer: {
-        icon_url: client.user.avatarURL,
-        text: "© PCE"
+        icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
+        text: "© lPokerFace"
       }}});}
 
   if (message.content.startsWith(prefix + 'oro')) {
@@ -99,18 +103,46 @@ client.on('message', message => {
       },
       {
         name: "`Métodos de obtención`",
-        value: "El principal método de obtención es trabajndo en minas de oro donde por 10 puntos energéticos recibes 1 unidad de oro, también se consigue oro completando misiones, con medallas de partido o comprándolo en la tienda del juego.."
+        value: "EL principal método de obtención es trabajndo en minas de oro donde por 1 punto energético recibes 1 unidad de oro, también se consigue oro completando misiones, con medallas de partido o comprándolo en la tienda del juego.."
       }
     ],
     timestamp: new Date(),
     footer: {
-      icon_url: client.user.avatarURL,
-      text: "© PCE"
+      icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
+      text: "© lPokerFace"
     }}});}
 
+  if (message.content.startsWith(prefix + 'trabajo')) {
+
+      message.channel.send({embed: {
+       color: 3447003,
+       author: {
+        name: client.user.username,
+        icon_url: client.user.avatarURL
+      },
+      title: "Trabajo",
+      url: "http://google.com",
+      description: "La mecánica principal del juego es trabajar en fábricas, el trabajo en fábricas te permite conseguir recursos, oro, dinero y experiencia laboral.",
+      fields: [{
+          name: "`Cómo trabajar en móvil`",
+          value: 'Seleccionas la pestaña de trabajo en el menu inferior del juego, se te abrirá una nueva pantalla con diferente información, arriba se encuentra la cantidad de recursos de la región, si los recursos están a 0 no lograrás recursos al trabajar, en la parte baja encontrará las mejores fábricas del estado y un botón para ver las otras fábricas de la región, selecciona el botón verde en el que pone `Trabajar` en la fábrica en la que quieras realizar dicha acción y se abrirá un nuevo panel donde puedes elegir la cantidad de energía que quieres gastar junto a un botón par trabajar y un botón para activar el modo automático en caso de ser miembro premium.'
+        },
+        {
+          name: "`Cómo trabajar en PC`",
+          value: "Seleccionas la pestaña de trabajo en el menú superior del juego, se te abrirá una nueva pantalla con un diferente información, arriba se encuentra la cantidad de recursos de al región, debajo se encuentran 3 fábricas del administrador para los niveles bajos, debajo de estas fábricas se encuentra el botón para buscar una fábrica privada, si lo pulsas se abrirá una pantalla con todas las fábricas de la región, para trabajar en una debes pulsar el botón verde en el que pone `Trabajar` al lado de la fábrica, cuando hagas eso se abrirá un nuevo panel con información sobre la fábrica, en este panel puedes elegir la cantidad de energía que quieres gastar, para trabajar solo debes pulsar el botón en el que pone `Trabajar` en este nuevo panel. Puedes activar el modo automático en caso de ser usuario premium"
+        }
+      ],
+      timestamp: new Date(),
+      footer: {
+        icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
+        text: "© lPokerFace"
+      }}});}
+
   if (message.content.startsWith(prefix + 'asd')) {
-    const prueba = require('./prueba');
-    let val = prueba.hello();}
+    var prueba = require('./prueba.js');
+    let val = prueba.prueba();
+    console.log('funsiona')
+  }
 
   if (message.content.startsWith(prefix + 'setgame')) {
     client.user.setGame(argresult);
