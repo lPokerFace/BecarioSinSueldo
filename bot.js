@@ -46,6 +46,10 @@ client.on('message', message => {
           value: "Muestra información sobre el trabajo en Rival Regions."
         },
         {
+          name: "`comité`",
+          value: "Muestra los cargos del comité junto a los dueños de dicho cargo."
+        },
+        {
           name: "`prueba`",
           value: "Envía un mensaje privado de prueba para comprobar el estado del bot."
         }
@@ -137,6 +141,52 @@ client.on('message', message => {
         icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
         text: "© lPokerFace"
       }}});}
+
+  if (message.content.startsWith(prefix + 'comité')) {
+
+        message.channel.send({embed: {
+         color: 3447003,
+         author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL
+        },
+        title: "Comité",
+        url: "http://google.com",
+        description: "Estos son los cargos del comité central junto a sus actuales dueños.",
+        fields: [{
+            name: "`Líder del Partido`",
+            value: "Dueño del cargo: @Cebolla_Man"
+          },
+          {
+            name: "`Secretario General`",
+            value: "Dueño del cargo: @viprus"
+          },
+          {
+            name: "`Secretario Institucional`",
+            value: "Dueño del cargo: @Eldestructor109"
+          },
+          {
+            name: "`Secretario Juvenil`",
+            value: "Dueños del cargo: @lPokerFace @Rafael jerónimo"
+          },
+          {
+            name: "`Comisario de los Boinas`",
+            value: "Dueño del cargo: @Nepomu"
+          },
+          {
+            name: "`Secretario de Información`",
+            value: "Dueño del cargo: @Ángel S. López"
+          },
+          {
+            name: "`Reclutador`",
+            value: "Dueños del cargo: @El viejo Jenkins @Vicente Rojo Lluch"
+          },
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
+          text: "© lPokerFace"
+        }}});}
 
   if (message.content.startsWith(prefix + 'asd')) {
     var prueba = require('./prueba.js');
