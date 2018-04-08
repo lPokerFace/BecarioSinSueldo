@@ -211,4 +211,10 @@ client.on('guildMemberAdd', member => {
   channel.send(`Bienvenido ${member}, di tu nombre de RR y el partido al que perteneces.`);
 });
 
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find('name', 'bienvenido');
+  if (!channel) return;
+  channel.send(`Bienvenido ${member}, este es el canal de bienvenida al discord de enseñanza de los novatos. Por favor específica tu nombre en RR y tu partido.`);
+});
+
 client.login(process.env.BOT_TOKEN);
