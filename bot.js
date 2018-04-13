@@ -159,29 +159,37 @@ client.on('message', message => {
           },
           {
             name: "`Secretario General`",
-            value: "Dueño del cargo: @viprus"
+            value: "Dueño del cargo: @RedPato"
+          },
+          {
+             name: "`Subsecretario`",
+             value: "Dueño del cargo: @Borrokan27"
           },
           {
             name: "`Secretario Institucional`",
             value: "Dueño del cargo: @Eldestructor109"
           },
           {
-            name: "`Secretario Juvenil`",
-            value: "Dueños del cargo: @lPokerFace @Rafael jerónimo"
+            name: "`Líder de Tutores`",
+            value: "Dueño del cargo: @Rafael jerónimo"
           },
           {
             name: "`Comisario de los Boinas`",
-            value: "Dueño del cargo: @Nepomu"
+            value: "Dueño del cargo: @Sir Pedri"
           },
           {
             name: "`Secretario de Información`",
             value: "Dueño del cargo: @Ángel S. López"
           },
           {
-            name: "`Reclutador`",
-            value: "Dueños del cargo: @El viejo Jenkins @Vicente Rojo Lluch"
-          },
-        ],
+            name: "`Tesorero`",
+            value: "Dueño del cargo: @Nacho Fatule"
+          },       
+          {
+            name: "`Líder de Reclutadores`",
+            value: "Dueño del cargo: @El viejo Jenkins"
+          },    
+         ],
         timestamp: new Date(),
         footer: {
           icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
