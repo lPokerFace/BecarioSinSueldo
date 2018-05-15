@@ -10,7 +10,7 @@ var prefix = '+'
 client.on('message', message => {
   let args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  let say = message.content.split("decir").slice(1)
+  let say = message.content.split("decir").slice(1);
 
   if (message.content.startsWith(prefix + 'ping')) {
       message.channel.send('pong');
