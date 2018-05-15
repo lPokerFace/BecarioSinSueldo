@@ -3,12 +3,14 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
    console.log('I\'m Online \nI\'m Online')
+   client.user.setGame("+help para lista de comandos.")
 });
 
 var prefix = '+'
 client.on('message', message => {
   let args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
+  let say = message.content.split("say").slice(1)
 
   if (message.content.startsWith(prefix + 'ping')) {
       message.channel.send('pong');
@@ -159,37 +161,29 @@ client.on('message', message => {
           },
           {
             name: "`Secretario General`",
-            value: "Dueño del cargo: @RedPato"
-          },
-          {
-             name: "`Subsecretario`",
-             value: "Dueño del cargo: @Borrokan27"
+            value: "Dueño del cargo: @viprus"
           },
           {
             name: "`Secretario Institucional`",
             value: "Dueño del cargo: @Eldestructor109"
           },
           {
-            name: "`Líder de Tutores`",
-            value: "Dueño del cargo: @Rafael jerónimo"
+            name: "`Secretario Juvenil`",
+            value: "Dueños del cargo: @lPokerFace @Rafael jerónimo"
           },
           {
             name: "`Comisario de los Boinas`",
-            value: "Dueño del cargo: @Sir Pedri"
+            value: "Dueño del cargo: @Nepomu"
           },
           {
             name: "`Secretario de Información`",
             value: "Dueño del cargo: @Ángel S. López"
           },
           {
-            name: "`Tesorero`",
-            value: "Dueño del cargo: @Nacho Fatule"
-          },       
-          {
-            name: "`Líder de Reclutadores`",
-            value: "Dueño del cargo: @El viejo Jenkins"
-          },    
-         ],
+            name: "`Reclutador`",
+            value: "Dueños del cargo: @El viejo Jenkins @Vicente Rojo Lluch"
+          },
+        ],
         timestamp: new Date(),
         footer: {
           icon_url: 'https://cdn.discordapp.com/avatars/230330757598543873/38cfc50bbd956d4f562428902a29d265.png',
@@ -209,6 +203,11 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'prueba')) {
     message.channel.send('Mira tus mensajes privados.');
     message.author.send('Esto es una prueba de Mensaje Privado.');
+  }
+
+  if (message.content.startsWith(prefix + 'decir')) {
+    message.delete()
+    message.channel.send(say)
   }
 
 });
