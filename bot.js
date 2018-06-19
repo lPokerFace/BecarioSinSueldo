@@ -1,16 +1,36 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const YoutubeDL = require('youtube-dl');
+const ytdl = require('ytdl-core');
+const music = require('discord.js-music-v11');
+const token = "<auth_token>"
 
 client.on('ready', () => {
    console.log('I\'m Online \nI\'m Online')
-   client.user.setGame("+help para lista de comandos.")
+   client.user.setActivity("+help para lista de comandos.")
 });
 
 var prefix = '+'
+var servers = {};
+
 client.on('message', message => {
+  function play(connection, message){
+    var server = servers[message.guild.id];
+
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+      if (server.queue[0]) play(connection, message);
+      else connection.disconnect
+    });
+  }
+  var args2 = message.content.split(" ");
   let args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
   let say = message.content.split("decir").slice(1);
+  var queue = server.queue
 
   if (message.content.startsWith(prefix + 'ping')) {
       message.channel.send('pong');
@@ -197,7 +217,7 @@ client.on('message', message => {
   }
 
   if (message.content.startsWith(prefix + 'setgame')) {
-    client.user.setGame(argresult);
+    client.user.setActivity(argresult);
    }
 
   if (message.content.startsWith(prefix + 'prueba')) {
@@ -208,6 +228,47 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'decir')) {
     message.delete()
     message.channel.send(say)
+  }
+
+  if (message.content.startsWith(prefix + 'play')) {
+    if(!args2[1]) {
+      message.channel.send("Inserta un link por favor.")
+    }
+
+    if(!message.member.voiceChannel) {
+      message.channel.send("Debes estar en un canal de voz")
+    }
+
+    if (!servers[message.guild.id]) servers[message.guild.id] = {
+      queue: []
+    };
+
+    var server = servers[message.guild.id];
+
+    server.queue.push(args2[1]);
+
+    message.channel.send("Canción añadida a la lista de reproducción.")
+
+    if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+      play(connection, message);
+    });
+
+  }
+
+  if (message.content.startsWith(prefix + 'skip')) {
+    var server = servers[message.guild.id];
+
+    if (server.dispatcher) server.dispatcher.end();
+  }
+
+  if (message.content.startsWith(prefix + 'stop')) {
+    var server = servers[message.guild.id];
+
+    if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+  }
+
+  if (message.content.startsWith(prefix + 'queue')) {
+    message.channel.send(queue[0]);
   }
 
 });
